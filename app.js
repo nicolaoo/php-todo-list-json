@@ -20,6 +20,23 @@ createApp({
         },
         addTask() {
             console.log(this.taskUser)
+
+            $data = {
+                listDo: this.taskUser,
+            }
+
+            axios
+                .post('./server.php', $data, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                })
+                .then((res) => {
+                    this.todos = res.data
+                })
+                .catch((err) => {
+                    todos = []
+                })
         }
     },
     mounted() {
