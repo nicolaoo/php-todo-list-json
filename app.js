@@ -22,7 +22,7 @@ createApp({
             console.log(this.taskUser)
 
             $data = {
-                listDo: this.taskUser,
+                todo: this.taskUser,
             }
 
             axios
@@ -33,11 +33,10 @@ createApp({
                 })
                 .then((res) => {
                     this.todos = res.data
-
-
+                    this.taskUser = ''
                 })
                 .catch((err) => {
-                    todos = []
+                    this.todos = []
                 })
         }
     },
