@@ -21,6 +21,12 @@ createApp({
         addTask() {
             console.log(this.taskUser)
 
+            const text = this.taskUser.trim()
+            if (text === '') {
+                this.taskUser = ''
+                return
+            }
+
             $data = {
                 todo: this.taskUser,
             }
