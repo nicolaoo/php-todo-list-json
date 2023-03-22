@@ -13,18 +13,20 @@
 
 <div id="app">
     
-    <section>
-        <div class="container">
+    <section class="mx-a">
+        <div class="container text-center">
             <h1>{{ text }}</h1>
         </div>
-    </section>
-    <section>
-        <div class="container">
-        <ul class="list-group col-6">
-            <li v-for="el in todos" class="list-group-item">
-                {{el}}
-            </li>
-        </ul>
+        <div class="container ">
+            <ul class="list-group mx-auto col-6">
+                <li v-for="el in todos" :key="el" class="list-group-item">
+                    {{ el }}
+                </li>
+            </ul>
+            <div class="col-auto d-flex justify-content-center">
+                <input v-model="taskUser" @keyup.enter="addTask" class="my-5" type="text col-6" placeholder="do it" name="todo">
+                <input @click="addTask" class="my-5" type="submit">
+            </div>
         </div>
     </section>
 </div>
