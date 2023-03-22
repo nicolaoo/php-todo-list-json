@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            text: 'Toodolist',
+            text: 'Todo List',
             todos: [],
             taskUser: '',
         }
