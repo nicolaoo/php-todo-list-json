@@ -6,6 +6,7 @@ createApp({
             text: 'Todo List',
             todos: [],
             taskUser: '',
+            line: 'line',
         }
     },
     methods: {
@@ -27,12 +28,12 @@ createApp({
                 return
             }
 
-            $data = {
+            const data = {
                 todo: this.taskUser,
             }
 
             axios
-                .post('./server.php', $data, {
+                .post('./server.php', this.data, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -44,7 +45,7 @@ createApp({
                 .catch((err) => {
                     this.todos = []
                 })
-        }
+        },
     },
     mounted() {
         this.fetchToDo()
